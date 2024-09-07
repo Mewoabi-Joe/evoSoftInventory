@@ -1,13 +1,18 @@
-import { Box } from "@mui/material";
-import Layout from "./components/Layout";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { routes } from "./routes";
+import Layout from "./composants/Layout";
 
 function App() {
 	return (
-		<Layout>
-			<Box height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-				Accueil
-			</Box>
-		</Layout>
+		<BrowserRouter>
+			<Layout>
+				<Routes>
+					{Object.values(routes).map(({ chemin, élément }, index) => (
+						<Route key={index} path={chemin} element={élément} />
+					))}
+				</Routes>
+			</Layout>
+		</BrowserRouter>
 	);
 }
 
