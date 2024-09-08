@@ -29,7 +29,7 @@ const ChampDeRecherche = ({
 					(setlisteDeDonnées as Dispatch<SetStateAction<Magasin[]>>)(listeFiltréeDesMagasins);
 					break;
 				case "Produits":
-					const listeFiltréeDesProduits = produits.filter(({ prix, nom }) => nom.toLowerCase().includes(texteDeRecherche.toLowerCase()));
+					const listeFiltréeDesProduits = produits.filter(({ nom }) => nom.toLowerCase().includes(texteDeRecherche.toLowerCase()));
 
 					(setlisteDeDonnées as Dispatch<SetStateAction<Produit[]>>)(listeFiltréeDesProduits);
 					break;
@@ -48,7 +48,7 @@ const ChampDeRecherche = ({
 			size="small"
 			sx={{ maxWidth: "250px" }}
 			id="input-with-icon-textfield"
-			placeholder="rechercher un magasin"
+			placeholder={`rechercher un ${page.toLowerCase().slice(0,-1)}`}
 			slotProps={{
 				input: {
 					endAdornment: (

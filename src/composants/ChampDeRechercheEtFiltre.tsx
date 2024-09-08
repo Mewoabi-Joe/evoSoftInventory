@@ -11,9 +11,9 @@ const ChampDeRechercheEtFiltre = ({page, setlisteDeDonnées}: {
 	setlisteDeDonnées: Dispatch<SetStateAction<Magasin[]>> | Dispatch<SetStateAction<Produit[]>> ;
 }) => {
 	return (
-		<Box zIndex={5} position={"sticky"} top={"80px"}>
+		<Box position={"sticky"} top={"80px"}>
 			<Box display={"flex"} alignItems={"center"} gap={2} mb={3}>
-				<ChampDeRecherche page={page}  setlisteDeDonnées={setlisteDeDonnées} /> <Filtre />
+				<ChampDeRecherche page={page}  setlisteDeDonnées={setlisteDeDonnées} /> <Filtre page={page}  setlisteDeDonnées={setlisteDeDonnées}  />
 			</Box>
 			<Divider />
 		</Box>
