@@ -4,29 +4,29 @@ import Inventaire from "./pages/Inventaire";
 import Magasins from "./pages/Magasins";
 import Produits from "./pages/Produits";
 
-const lesChemins = {
-
-}
-
 export const routes = {
     accueil: {
         chemin: '/',
-        élément: <Accueil />
+        élément: <Accueil />,
     },
     magasins: {
         chemin: '/magasins',
-        élément: <Magasins />
+        élément: <Magasins />,
+
     },
     produits: {
         chemin: '/produits',
-        élément: <Produits />
+        élément: <Produits />,
+
     },
     inventaire: {
         chemin: '/inventaire',
-        élément: <Inventaire />
+        élément: <Inventaire />,
+
     },
     creerInventaire: {
         chemin: '/creer-inventaire',
-        élément: <CreerInventaire />
+        élément: <CreerInventaire />,
+        
     },
 }

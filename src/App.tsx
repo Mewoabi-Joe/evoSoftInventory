@@ -1,17 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
-import Layout from "./composants/Layout";
+import MiseEnPageApplication from "./miseEnPages/MiseEnPageApplication";
 
 function App() {
 	return (
 		<BrowserRouter>
-			<Layout>
+			<MiseEnPageApplication>
 				<Routes>
 					{Object.values(routes).map(({ chemin, élément }, index) => (
 						<Route key={index} path={chemin} element={élément} />
 					))}
 				</Routes>
-			</Layout>
+			</MiseEnPageApplication>
 		</BrowserRouter>
 	);
 }
