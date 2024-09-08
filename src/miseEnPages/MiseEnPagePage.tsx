@@ -5,7 +5,7 @@ const MiseEnPagePage = ({ titreDeLaPage, children }: { titreDeLaPage: string; ch
 	return (
 		<Box width={"100%"}>
 			<EnTetePage texte={titreDeLaPage} />
-			<Box mt={4}>{children}</Box>
+			<Box mt={3}>{children}</Box>
 		</Box>
 	);
 };

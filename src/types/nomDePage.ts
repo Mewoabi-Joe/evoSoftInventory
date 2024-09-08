@@ -1,0 +1,1 @@
+export type NomDePage = 'Accueil' | 'Magasins' | 'Produits' | 'Inventaire' | 'Créer Inventaire'
