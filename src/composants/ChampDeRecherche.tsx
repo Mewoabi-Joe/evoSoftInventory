@@ -23,13 +23,13 @@ const ChampDeRecherche = ({
 			switch (page) {
 				case "Magasins":
 					const listeFiltréeDesMagasins = magasins.filter(
-						({ adresse, nom }) => nom.includes(texteDeRecherche) || adresse.includes(texteDeRecherche)
+						({ adresse, nom }) => nom.toLowerCase().includes(texteDeRecherche.toLowerCase()) || adresse.toLowerCase().includes(texteDeRecherche.toLowerCase())
 					);
 
 					(setlisteDeDonnées as Dispatch<SetStateAction<Magasin[]>>)(listeFiltréeDesMagasins);
 					break;
 				case "Produits":
-					const listeFiltréeDesProduits = produits.filter(({ prix, nom }) => nom.includes(texteDeRecherche));
+					const listeFiltréeDesProduits = produits.filter(({ prix, nom }) => nom.toLowerCase().includes(texteDeRecherche.toLowerCase()));
 
 					(setlisteDeDonnées as Dispatch<SetStateAction<Produit[]>>)(listeFiltréeDesProduits);
 					break;

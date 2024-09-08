@@ -1,6 +1,4 @@
 import { List } from "@mui/material";
-import React from "react";
-import { magasins } from "../donnees/magasins";
 import ElementListe from "./ElementListe";
 import { Produit } from "../types/produit";
 import { Magasin } from "../types/magasin";

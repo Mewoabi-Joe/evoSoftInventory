@@ -4,10 +4,11 @@ import Filtre from "./Filtre";
 import { NomDePage } from "../types/nomDePage";
 import { Magasin } from "../types/magasin";
 import { Dispatch, SetStateAction } from "react";
+import { Produit } from "../types/produit";
 
 const ChampDeRechercheEtFiltre = ({page, setlisteDeDonnées}: {
 	page: NomDePage;
-	setlisteDeDonnées: Dispatch<SetStateAction<Magasin[]>> | Dispatch<SetStateAction<Magasin[]>> ;
+	setlisteDeDonnées: Dispatch<SetStateAction<Magasin[]>> | Dispatch<SetStateAction<Produit[]>> ;
 }) => {
 	return (
 		<Box zIndex={5} position={"sticky"} top={"80px"}>

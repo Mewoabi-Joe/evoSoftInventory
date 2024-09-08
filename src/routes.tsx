@@ -4,9 +4,9 @@ import CreerInventaire from "./pages/CreerInventaire";
 import Inventaire from "./pages/Inventaire";
 import Magasins from "./pages/Magasins";
 import Produits from "./pages/Produits";
-import { NomDePage } from "./types/nomDePage";
+import { clésNomDePage, NomDePage } from "./types/nomDePage";
 
-export const routes: Record<string, { chemin: string; élément: ReactElement; nomDePage: NomDePage }> = {
+export const routes: Record<clésNomDePage, { chemin: string; élément: ReactElement; nomDePage: NomDePage }> = {
 	accueil: {
 		chemin: "/",
 		élément: <Accueil />,

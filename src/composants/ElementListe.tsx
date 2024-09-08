@@ -1,4 +1,4 @@
-import { Card, CardContent, ListItem, ListItemButton, ListItemText, Stack, Typography } from "@mui/material";
+import { Card, CardContent, Stack, Typography } from "@mui/material";
 
 const ElementListe = ({textePrimaire, texteSecondaire, texteDeFin, plusDeTexte}:{textePrimaire: string; texteSecondaire: string |number; plusDeTexte?:string; texteDeFin?: string;}) => {
 	return (
