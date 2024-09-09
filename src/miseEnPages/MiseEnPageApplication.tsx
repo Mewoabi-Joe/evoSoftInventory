@@ -10,7 +10,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 import React from "react";
 import { Typography } from "@mui/material";
-import { Fastfood, Home, Store } from "@mui/icons-material";
+import { Fastfood, Home, ShopTwo, Store } from "@mui/icons-material";
 import { routes } from "../routes";
 import { useNavigate } from "react-router-dom";
 
@@ -35,6 +35,11 @@ const MiseEnPageApplication = ({ children }: { children: React.ReactNode }) => {
 			texte: "Produits",
 			icon: <Fastfood />,
 			chemin: routes.produits.chemin,
+		},
+		{
+			texte: "Inventaire",
+			icon: <ShopTwo />,
+			chemin: routes.inventaire.chemin,
 		},
 	];
 

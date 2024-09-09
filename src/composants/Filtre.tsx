@@ -1,10 +1,11 @@
-import { Box, Button, Paper, Popper, Slider, Typography } from "@mui/material";
+import { Box, Button, IconButton, Paper, Popper, Slider, Typography } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import React, { Dispatch, SetStateAction } from "react";
 import { Magasin } from "../types/magasin";
 import { NomDePage } from "../types/nomDePage";
 import { Produit } from "../types/produit";
 import { produits } from "../donnees/produits";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Filtre = ({
 	page,
@@ -53,10 +54,13 @@ const Filtre = ({
 				Filtrer
 			</Button>
 			<Popper id={id} open={open} anchorEl={anchorEl}>
-				<Paper elevation={5} sx={{ p: 3, width: 250 }}>
+				<Paper elevation={5} sx={{ p: 3, width: 250, position: 'relative' }}>
+					<IconButton size="small" onClick={gérerClic } sx={{position: "absolute", top: 0, right: 0}} aria-label="delete">
+						<CloseIcon />
+					</IconButton>
 					{page === "Produits" ? (
 						<>
-							<Typography gutterBottom textAlign={"center"}>
+							<Typography mb={2} gutterBottom textAlign={"center"}>
 								Plage de prix
 							</Typography>
 							<Slider

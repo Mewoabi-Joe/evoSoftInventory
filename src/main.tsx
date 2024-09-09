@@ -8,6 +8,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { NotificationsProvider } from '@toolpad/core/useNotifications';
 
 const theme = createTheme({
 	typography: {
@@ -18,8 +19,10 @@ const theme = createTheme({
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
 		<ThemeProvider theme={theme}>
-			<CssBaseline />
-			<App />
+			<NotificationsProvider>
+				<CssBaseline />
+				<App />
+			</NotificationsProvider>;
 		</ThemeProvider>
 	</StrictMode>
 );
