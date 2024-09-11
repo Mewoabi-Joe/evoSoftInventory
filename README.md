@@ -1,6 +1,6 @@
 # EvoSoft Inventory
 
-EvoSoft Inventory est une application de gestion d'inventaire basée sur React pour une entreprise fictive gérant plusieurs magasins. L'application permet aux employés de saisir et de gérer les données d'inventaire pour divers produits dans différents magasins.
+EvoSoft Inventory est une application de gestion d'inventaire pour une entreprise fictive gérant plusieurs magasins. L'application permet aux employés de saisir et de gérer les données d'inventaire pour divers produits dans différents magasins. Elle est développée en utilisant React, TypeScript et Material UI.
 
 ## Table des Matières
 
