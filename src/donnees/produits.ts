@@ -50,32 +50,8 @@ export const produits: Produit[] = [
       id: '10',
       nom: 'Enceinte Bluetooth',
       prix: 59.99,
-    },
-    {
-      id: '11',
-      nom: 'Imprimante 3D',
-      prix: 399.99,
-    },
-    {
-      id: '12',
-      nom: 'Caméra de Sécurité',
-      prix: 199.99,
-    },
-    {
-      id: '13',
-      nom: 'Station de Charge Sans Fil',
-      prix: 49.99,
-    },
-    {
-      id: '14',
-      nom: 'Smartwatch',
-      prix: 199.99,
-    },
-    {
-      id: '15',
-      nom: 'Routeur Wi-Fi',
-      prix: 89.99,
-    },
+    }
+    
   ];
   
   

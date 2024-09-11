@@ -13,7 +13,7 @@ const Produits = () => {
 	return (
 		<MiseEnPagePage titreDeLaPage={nomDePage}>
 			<Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={3}>
-				<ChampDeRechercheEtFiltre page={nomDePage}  setlisteDeDonnées={setProduitsAffichés} />
+				<ChampDeRechercheEtFiltre page={nomDePage}  setlisteDeDonnées={setProduitsAffichés} afficherFiltre={true} />
 				<Liste page={nomDePage} listeDeDonnées={produitsAffichés} />
 			</Box>
 		</MiseEnPagePage>

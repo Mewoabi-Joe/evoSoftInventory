@@ -24,6 +24,7 @@ import { useLocalStorageState, Codec } from "@toolpad/core";
 import { useNotifications } from "@toolpad/core";
 import { Inventaire } from "../types/inventaire";
 import { obtenirDateActuelle } from "../utils/obtenirDateActuelle";
+import { INVENTAIRES_CODEC } from "../utils/codecLocalStorageInventaire";
 
 interface DonnéesFormulaire {
 	magasinId: undefined | string;
@@ -31,11 +32,6 @@ interface DonnéesFormulaire {
 	date: string;
 	stock: undefined | number;
 }
-
-const INVENTAIRES_CODEC: Codec<Inventaire[]> = {
-	parse: (inventairesString) => JSON.parse(inventairesString),
-	stringify: (inventaires) => JSON.stringify(inventaires),
-};
 
 const CreerInventaire = () => {
 	const nomDePage = routes.creerInventaire.nomDePage;
@@ -57,7 +53,7 @@ const CreerInventaire = () => {
 	const [donnéesFormulaire, setDonnéesFormulaire] = useState<DonnéesFormulaire>({
 		magasinId: undefined,
 		produitId: undefined,
-		date: obtenirDateActuelle().toDateString(),
+		date: obtenirDateActuelle().toISOString(),
 		stock: undefined,
 	});
 
@@ -67,9 +63,9 @@ const CreerInventaire = () => {
 
 	const gérerChangementSélecteurDeDate = (nouvelleDate: Dayjs | null) => {
 		if (nouvelleDate) {
-			// Heure par défaut à 00h00 chaque jour
+			// Heure par défaut à 12h00 chaque jour
 			let nouvelleJSDate = nouvelleDate.toDate();
-			nouvelleJSDate.setHours(0, 0, 0, 0);
+			nouvelleJSDate.setHours(12, 0, 0, 0);
 
 			setDonnéesFormulaire({
 				...donnéesFormulaire,
@@ -162,14 +158,12 @@ const CreerInventaire = () => {
 		<MiseEnPagePage titreDeLaPage={nomDePage}>
 			<Stack component={"form"} mt={8} alignItems={"center"} spacing={3} width={"100%"} onSubmit={gererSoumission}>
 				{/* <Typography>Magasin</Typography> */}
-				<LocalizationProvider dateAdapter={AdapterDayjs}>
-					<DatePicker
-						label="Date"
-						sx={longueurSaisieFormulaire}
-						value={dayjs(donnéesFormulaire.date)}
-						onChange={gérerChangementSélecteurDeDate}
-					/>
-				</LocalizationProvider>
+				<DatePicker
+					label="Date"
+					sx={longueurSaisieFormulaire}
+					value={dayjs(donnéesFormulaire.date)}
+					onChange={gérerChangementSélecteurDeDate}
+				/>
 				<FormControl sx={longueurSaisieFormulaire}>
 					<InputLabel id="produit">Produits</InputLabel>
 					<Select

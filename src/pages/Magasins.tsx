@@ -14,7 +14,7 @@ const Magasins = () => {
 	return (
 		<MiseEnPagePage titreDeLaPage={nomDePage}>
 			<Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={3}>
-				<ChampDeRechercheEtFiltre page={nomDePage}  setlisteDeDonnées={setMagasinsAffichés} />
+				<ChampDeRechercheEtFiltre page={nomDePage}  setlisteDeDonnées={setMagasinsAffichés} afficherFiltre={false} />
 				<Liste page={nomDePage} listeDeDonnées={magasinsAffichés} />
 			</Box>
 		</MiseEnPagePage>

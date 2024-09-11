@@ -8,7 +8,9 @@ import App from "./App.tsx";
 import "./index.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { NotificationsProvider } from '@toolpad/core/useNotifications';
+import { NotificationsProvider } from "@toolpad/core/useNotifications";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 const theme = createTheme({
 	typography: {
@@ -20,9 +22,11 @@ createRoot(document.getElementById("root")!).render(
 	<StrictMode>
 		<ThemeProvider theme={theme}>
 			<NotificationsProvider>
-				<CssBaseline />
-				<App />
-			</NotificationsProvider>;
+				<LocalizationProvider dateAdapter={AdapterDayjs}>
+					<CssBaseline />
+					<App />
+				</LocalizationProvider>
+			</NotificationsProvider>
 		</ThemeProvider>
 	</StrictMode>
 );
