@@ -106,7 +106,7 @@ Je n'ai rencontré aucun défi majeur en travaillant sur ce projet, mais si je d
 - L'enregistrement de la vidéo, son montage et sa compression pour obtenir une taille que je pouvais pousser sur GitHub
 
 **Limitations et Perspectives**
-- Bien que les exigences ne mentionnaient pas la réactivité, c'est quelque chose que j'avais en tête pour rendre l'application entièrement réactive.
+- Bien que les exigences ne mentionnaient pas le responsiveness, c'est quelque chose que j'avais en tête pour rendre l'application entièrement responsive.
 - Implémenter un CRUD complet pour les magasins, les produits et l'inventaire dans l'application pourrait également être intéressant plutôt que d'avoir certaines données statiques.
 - Passer l'application en full stack et ajouter un backend avec une base de données est également quelque chose qui pourrait amener l'application au niveau supérieur.
 
