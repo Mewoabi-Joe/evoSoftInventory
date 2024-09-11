@@ -5,16 +5,19 @@ import MiseEnPagePage from "../miseEnPages/MiseEnPagePage";
 import { magasins } from "../donnees/magasins";
 import { produits } from "../donnees/produits";
 import { routes } from "../routes";
+import { useTranslation } from 'react-i18next';
 
 const Accueil = () => {
-	return (
-		<MiseEnPagePage titreDeLaPage="Accueil">
-			<Box display={'flex'} justifyContent={'center'} gap={4}>
-				<CarteAccueil titre="Magasins" nombre={magasins.length} chemin={routes.magasins.chemin} />
-				<CarteAccueil titre="Produits" nombre={produits.length} chemin={routes.produits.chemin}/>
-			</Box>
-		</MiseEnPagePage>
-	);
+    const { t } = useTranslation();
+
+    return (
+        <MiseEnPagePage titreDeLaPage={t("homePage.pageTitle")}>
+            <Box display={'flex'} justifyContent={'center'} gap={4}>
+                <CarteAccueil titre={t("homePage.cardTitles.stores")} nombre={magasins.length} chemin={routes.magasins.chemin} />
+                <CarteAccueil titre={t("homePage.cardTitles.products")} nombre={produits.length} chemin={routes.produits.chemin}/>
+            </Box>
+        </MiseEnPagePage>
+    );
 };
 
 export default Accueil;

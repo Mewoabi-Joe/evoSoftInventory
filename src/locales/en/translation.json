@@ -1,0 +1,18 @@
+{
+  "appTitle": "Evo Soft Inventory",
+  "createInventory": "Create Inventory",
+  "drawerItems": {
+    "home": "Home",
+    "stores": "Stores",
+    "products": "Products",
+    "inventory": "Inventory"
+  },
+  "changeLanguage": "Switch Language",
+  "homePage": {
+    "pageTitle": "Home",
+    "cardTitles": {
+      "stores": "Stores",
+      "products": "Products"
+    }
+  }
+}

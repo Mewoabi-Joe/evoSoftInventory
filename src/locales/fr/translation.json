@@ -1,0 +1,16 @@
+{
+  "appTitle": "Evo Soft Inventory",
+  "createInventory": "Créer un inventaire",
+  "drawerItems": {
+    "home": "Accueil",
+    "stores": "Magasins",
+    "products": "Produits",
+    "inventory": "Inventaire"
+  },
+  "changeLanguage": "Changer de langue",
+  "homePage": {"pageTitle": "Accueil",
+  "cardTitles": {
+    "stores": "Magasins",
+    "products": "Produits"
+  }}
+}
