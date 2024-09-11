@@ -12,6 +12,7 @@ import { magasins } from "../donnees/magasins";
 import dayjs from "dayjs";
 import { useLocation } from "react-router-dom";
 import { produits } from "../donnees/produits";
+import ExporterCSV from "../composants/ExporterCSV";
 
 const Inventaire = () => {
 	const location = useLocation();
@@ -72,22 +73,41 @@ const Inventaire = () => {
 				});
 			});
 		});
-	
+
 		setStockEtDatesPourLeProduitDeFocusDansUnMagasin(stockEtDatesPourLeProduitDeFocusDansUnMagasinTemporaire);
 	}, [lesDates]);
 
-	
+	const generateInventoryDataInCSVExportFormat = () => {
+		const data: any[] = [];
+		Object.values(stockEtDatesPourLeProduitDeFocusDansUnMagasin).forEach((magasin) => {
+			//format the date with dayjs
+			const magasinsWithformattedDate = magasin.map(({ date, ...rest }) => ({
+				...rest,
+				date: dayjs(date).format("DD-MM-YYYY"),
+			}));
+			data.push(...magasinsWithformattedDate);
+		});
+
+		return data;
+	};
 
 	return (
 		<MiseEnPagePage titreDeLaPage={nomDePage}>
 			<Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={3}>
-				<FiltresDInventaire
-					produitEnFocus={produitEnFocus}
-					setProduitEnFocus={setProduitEnFocus}
-					lesDates={lesDates}
-					datesOriginal={datesOriginal}
-					setLesDates={setLesDates}
-				/>
+				<Box display={"flex"} alignItems={"center"} gap={4}>
+					<FiltresDInventaire
+						produitEnFocus={produitEnFocus}
+						setProduitEnFocus={setProduitEnFocus}
+						lesDates={lesDates}
+						datesOriginal={datesOriginal}
+						setLesDates={setLesDates}
+					/>
+					<ExporterCSV
+						data={generateInventoryDataInCSVExportFormat()}
+						nomDuFichier={`Inventaire-du-produit-${produitEnFocus}`}
+					/>
+				</Box>
+
 				{Object.keys(stockEtDatesPourLeProduitDeFocusDansUnMagasin).length &&
 					lesDates.length === Object.values(stockEtDatesPourLeProduitDeFocusDansUnMagasin)[0].length && (
 						<LineChart
