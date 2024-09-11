@@ -8,7 +8,6 @@ EvoSoft Inventory est une application de gestion d'inventaire pour une entrepris
 - [Installation](#installation)
 - [Utilisation](#utilisation)
 - [Structure du Projet](#structure-du-projet)
-- [Internationalisation](#internationalisation)
 - [Fonctionnalités Bonus](#fonctionnalités-bonus)
 
 ## Fonctionnalités
@@ -97,12 +96,6 @@ tsconfig.json
 tsconfig.node.json
 vite.config.ts
 ```
-
-## Internationalisation
-
-L'application prend en charge plusieurs langues en utilisant `react-i18next`. Pour changer de langue, utilisez le sélecteur de langue fourni dans l'interface.
-
-Les fichiers de traduction sont situés dans le répertoire `src/locales/`.
 
 ## Fonctionnalités Bonus
 
