@@ -77,18 +77,18 @@ const Inventaire = () => {
 		setStockEtDatesPourLeProduitDeFocusDansUnMagasin(stockEtDatesPourLeProduitDeFocusDansUnMagasinTemporaire);
 	}, [lesDates]);
 
-	const generateInventoryDataInCSVExportFormat = () => {
-		const data: any[] = [];
+	const genererDonneesInventairePourExportationCSV = () => {
+		const donnees: any[] = [];
 		Object.values(stockEtDatesPourLeProduitDeFocusDansUnMagasin).forEach((magasin) => {
-			//format the date with dayjs
-			const magasinsWithformattedDate = magasin.map(({ date, ...rest }) => ({
-				...rest,
+			// formater la date avec dayjs
+			const magasinsAvecDateFormatee = magasin.map(({ date, ...reste }) => ({
+				...reste,
 				date: dayjs(date).format("DD-MM-YYYY"),
 			}));
-			data.push(...magasinsWithformattedDate);
+			donnees.push(...magasinsAvecDateFormatee);
 		});
 
-		return data;
+		return donnees;
 	};
 
 	return (
@@ -103,7 +103,7 @@ const Inventaire = () => {
 						setLesDates={setLesDates}
 					/>
 					<ExporterCSV
-						data={generateInventoryDataInCSVExportFormat()}
+						data={genererDonneesInventairePourExportationCSV()}
 						nomDuFichier={`Inventaire-du-produit-${produitEnFocus}`}
 					/>
 				</Box>

@@ -1,50 +1,112 @@
-# React + TypeScript + Vite
+# EvoSoft Inventory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EvoSoft Inventory est une application de gestion d'inventaire basée sur React pour une entreprise fictive gérant plusieurs magasins. L'application permet aux employés de saisir et de gérer les données d'inventaire pour divers produits dans différents magasins.
 
-Currently, two official plugins are available:
+## Table des Matières
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Fonctionnalités](#fonctionnalités)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Structure du Projet](#structure-du-projet)
+- [Internationalisation](#internationalisation)
+- [Fonctionnalités Bonus](#fonctionnalités-bonus)
 
-## Expanding the ESLint configuration
+## Fonctionnalités
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Liste statique des magasins et des produits
+- Module de saisie d'inventaire
+- Stockage des données dans le `localStorage`
+- Fonctionnalité d'exportation CSV
+- Validation des données
+- Internationalisation avec `react-i18next`
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clonez le dépôt :
+
+  ```sh
+  git clone https://github.com/Mewoabi-Joe/evoSoftInventory.git
+  cd evoSoftInventory
+  ```
+
+2. Installez les dépendances :
+
+  ```sh
+  npm install
+  ```
+
+## Utilisation
+
+Ouvrez votre navigateur et accédez à http://localhost:5173. Utilisez l'interface pour saisir les données d'inventaire des produits dans différents magasins. Exportez les données d'inventaire au format CSV en utilisant le bouton d'exportation.
+
+## Structure du Projet
+
+```
+.gitignore
+eslint.config.js
+index.html
+package.json
+public/
+README.md
+src/
+  App.tsx
+  assets/
+  composants/
+    CarteAccueil.tsx
+    ChampDeRecherche.tsx
+    ChampDeRechercheEtFiltre.tsx
+    ElementListe.tsx
+    EnTetePage.tsx
+    ExporterCSV.tsx
+    Filtre.tsx
+    FiltresDInventaire.tsx
+    Liste.tsx
+  donnees/
+    magasins.ts
+    produits.ts
+  i18n.ts
+  index.css
+  locales/
+    en/
+      translation.json
+    fr/
+      translation.json
+  main.tsx
+  miseEnPages/
+    MiseEnPageApplication.tsx
+    MiseEnPagePage.tsx
+  pages/
+    Accueil.tsx
+    CreerInventaire.tsx
+    Inventaire.tsx
+    Magasin.tsx
+    Produits.tsx
+  routes.tsx
+  types/
+    inventaire.ts
+    inventaireSimple.ts
+    magasin.ts
+    nomDePages.ts
+    produit.ts
+  utils/
+    codecLocalStorageInventaire.ts
+    obtenirDateActuelle.ts
+  vite-env.d.ts
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Internationalisation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+L'application prend en charge plusieurs langues en utilisant `react-i18next`. Pour changer de langue, utilisez le sélecteur de langue fourni dans l'interface.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Les fichiers de traduction sont situés dans le répertoire `src/locales/`.
+
+## Fonctionnalités Bonus
+
+- **Exportation CSV** : Exportez les données d'inventaire au format CSV en utilisant le composant `ExporterCSV` dans `src/composants/ExporterCSV.tsx`.
+- **Validation des Données** : Assurez-vous que les données saisies sont correctes et complètes.
+- **Internationalisation** : Implémentée en utilisant `react-i18next`.
+
